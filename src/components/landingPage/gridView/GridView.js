@@ -5,6 +5,9 @@ import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import Pagination from "@material-ui/lab/Pagination";
 import EmailIcon from "@material-ui/icons/Email";
+import SkeltonView from "../loadingView/loadingView";
+
+const dummyArray = [1, 2, 3, 4, 5, 6];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
+
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -23,6 +27,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
+    "&:hover": {
+      background: "#E0E0E0",
+      zIndex: 10,
+      color: "black",
+      transition: ["all 3.5s ease", "padding 0.8s linear"],
+      transform: "translate3d(0,0,0)",
+      cursor: " pointer",
+    },
   },
 }));
 
@@ -71,6 +83,9 @@ export default function NestedGrid(props) {
         <Grid container item xs={12} spacing={3}>
           {props.data && props.data.map((user, index) => <FormRow {...user} />)}
         </Grid>
+        <Grid>
+          <SkeltonView />
+        </Grid>
       </Grid>
       <Pagination
         count={props.totalPage}
@@ -84,7 +99,10 @@ export default function NestedGrid(props) {
 }
 
 const styles = {
-  img: { height: "90px", width: "90px" },
+  img: {
+    height: "90px",
+    width: "90px",
+  },
   name: { fontSize: "22px", margin: "5px" },
   email: { display: "flex", alignItems: "center" },
 };
