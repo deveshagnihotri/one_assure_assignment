@@ -5,6 +5,5 @@ export const filterSearchByName = (prevList, inputVal) => {
       .toLowerCase()
       .includes(inputVal.toLowerCase())
   );
-  // console.log(newList, "filterSearchByName");
   return [...newList];
 };

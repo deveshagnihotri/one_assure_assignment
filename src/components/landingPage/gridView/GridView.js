@@ -6,6 +6,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Pagination from "@material-ui/lab/Pagination";
 import EmailIcon from "@material-ui/icons/Email";
 import SkeltonView from "../loadingView/loadingView";
+import "./GridView.css";
 
 const dummyArray = [1, 2, 3, 4, 5, 6];
 
@@ -64,7 +65,12 @@ export default function NestedGrid(props) {
       <React.Fragment>
         <Grid item xs={layout}>
           <Paper className={classes.paper}>
-            <Avatar alt="Remy Sharp" src={user.avatar} style={styles.img} />
+            <Avatar
+              alt="Remy Sharp"
+              src={user.avatar}
+              style={styles.img}
+              className="img"
+            />
             <span style={styles.name}>
               {user.first_name} {user.last_name}
             </span>
@@ -102,6 +108,7 @@ const styles = {
   img: {
     height: "90px",
     width: "90px",
+    animation: "mymove 5s infinite",
   },
   name: { fontSize: "22px", margin: "5px" },
   email: { display: "flex", alignItems: "center" },

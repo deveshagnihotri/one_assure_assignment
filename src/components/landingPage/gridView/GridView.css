@@ -1,0 +1,24 @@
+img:hover {
+  height: 95px;
+  width: 95px;
+}
+
+div {
+  animation: mymove 5s infinite;
+  transition-property: width;
+  transition-duration: 5s;
+  transition-delay: 2s;
+}
+
+div:hover {
+  animation-play-state: paused;
+}
+/* 
+@keyframes mymove {
+  from {
+    left: -170px;
+  }
+  to {
+    left: 0px;
+  }
+} */

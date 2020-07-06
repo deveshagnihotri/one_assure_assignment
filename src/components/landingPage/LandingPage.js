@@ -5,6 +5,8 @@ import {
   handleSearchInput,
   handleClearSearchField,
 } from "../../actions/LandingActions";
+import NavBar from "../nav/NavBar";
+
 const SearchView = React.lazy(() => import("./searchBox"));
 const GridView = React.lazy(() => import("./gridView"));
 
@@ -24,6 +26,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
+        {/* <NavBar /> */}
         <Suspense fallback={<div>Loading...</div>}>
           <div style={styles.searchContainer}>
             <SearchView
